@@ -16,16 +16,16 @@ public class Main extends PApplet {
     public void setup() {
         background(255);
         frameRate(1);
-        klok = new Klok(150, 100, 100, this);
+        klok = new Klok(150, 100, 100);
         klok.setTijd(22, 58);
         klok.tik();
         klok.tik();
-        klok.tekenKlok();
+        klok.tekenKlok(this);
     }
 
     public void draw() {
         klok.tik();
-        klok.tekenKlok();
+        klok.tekenKlok(this);
     }
 }
 
