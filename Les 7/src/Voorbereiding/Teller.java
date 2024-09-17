@@ -81,7 +81,6 @@ public class Teller {
         this.breedte = breedte;
     }
 
-
     String geefTijdNotatie() {
         if (waarde < 10) {
             return "0" + str(waarde);
