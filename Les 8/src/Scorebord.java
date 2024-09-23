@@ -24,16 +24,11 @@ public class Scorebord {
         getrokkenBallen.sort((bal1, bal2) -> bal1.isNummerGroterDan(bal2) ? 1 : -1);
     }
 
-    public void printScorebord() {
+    public void printScorebord() throws InterruptedException {
         System.out.print("Getrokken ballen:");
 
         for (Lottobal bal : getrokkenBallen) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
+            Thread.sleep(1000);
             System.out.append(" ").append(bal.toString());
         }
 
