@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class Licht {
     private PApplet app;
     private int kleur;
-    private LichtSwitch lichtSwitch;
+    public boolean isAan;
 
     public Licht(PApplet app) {
         this.app = app;
@@ -15,16 +15,11 @@ public class Licht {
     void schakelLicht() {
         if (kleur == 0) {
             kleur = 0xFFA4C739;
-            lichtSwitch.setIsAan(true);
-        }
-        else {
+            isAan = true;
+        } else {
             kleur = 0;
-            lichtSwitch.setIsAan(false);
+            isAan = false;
         }
-    }
-
-    public void setLichtSwitch(LichtSwitch lichtSwitch) {
-        this.lichtSwitch = lichtSwitch;
     }
 
     public void tekenLicht() {

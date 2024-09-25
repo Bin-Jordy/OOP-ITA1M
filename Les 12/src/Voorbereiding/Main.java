@@ -12,6 +12,8 @@ public class Main extends PApplet {
 
     private ArrayList<Knop> knoppen = new ArrayList<>();
 
+    LichtSwitch lichtSwitch;
+
     public void settings() {
         size(400, 400);
     }
@@ -19,12 +21,10 @@ public class Main extends PApplet {
     public void setup() {
         licht = new Licht(this);
 
-        LichtSwitch lichtSwitch = new LichtSwitch(this, licht, 100, 100, 40, 20);
+        lichtSwitch = new LichtSwitch(this, licht, 100, 100, 40, 20);
 
         knoppen.add(new LichtKnop(this, licht, 20, 20, 50, 50));
         knoppen.add(lichtSwitch);
-
-        licht.setLichtSwitch(lichtSwitch);
     }
 
     public void draw() {
@@ -38,6 +38,7 @@ public class Main extends PApplet {
         for (Knop k : knoppen) {
             if (k.isMuisOverKnop()) {
                 k.handelInteractieAf();
+                lichtSwitch.synchroniseer();
             }
         }
     }

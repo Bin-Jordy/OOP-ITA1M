@@ -17,7 +17,11 @@ public class LichtSwitch extends Switch {
         licht.schakelLicht();
     }
 
-    public void setIsAan(boolean isAan) {
-        this.isAan = isAan;
+    public void synchroniseer() {
+        if (licht.isAan) {
+            isAan = true;
+        } else {
+            isAan = false;
+        }
     }
 }
