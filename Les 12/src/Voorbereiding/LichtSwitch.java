@@ -18,10 +18,6 @@ public class LichtSwitch extends Switch {
     }
 
     public void synchroniseer() {
-        if (licht.isAan) {
-            isAan = true;
-        } else {
-            isAan = false;
-        }
+        isAan = this.licht.isAan;
     }
 }
