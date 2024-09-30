@@ -57,14 +57,6 @@ public class TekenApp extends PApplet {
         return gereedschapLijst;
     }
 
-    public int getMuisY() {
-        return muisY;
-    }
-
-    public int getMuisX() {
-        return muisX;
-    }
-
     public void keyReleased() {
         for (IGereedschap gereedschap : this.gereedschapLijst) {
             if (Objects.equals(gereedschap.getShortcutToets(), str(key))) {
