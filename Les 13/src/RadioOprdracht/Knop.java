@@ -1,16 +1,17 @@
+package RadioOprdracht;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
 
 public abstract class Knop {
-
+	
 	protected PApplet app;
 
 	protected float x, y, breedte, hoogte;
-
-	protected ArrayList<IDoelwit> doelwitten = new ArrayList<IDoelwit>();
+	protected ArrayList<IDoelwit> doelwitten;
 
 	public Knop(PApplet app, float x, float y, float breedte, float hoogte) {
+		doelwitten = new ArrayList<IDoelwit>();
 		this.app = app;
 		this.x = x;
 		this.y = y;
@@ -19,15 +20,17 @@ public abstract class Knop {
 	}
 
 	public boolean isMuisOverKnop() {
-		if (app.mouseX >= x && app.mouseX < x + breedte && app.mouseY >= y && app.mouseY < y + hoogte) {
+		if (app.mouseX >= x && app.mouseX < x + breedte &&
+				app.mouseY >= y && app.mouseY < y + hoogte) {
 			return true;
-		} else {
+		}
+		else {
 			return false;
 		}
 	}
 
 	public abstract void tekenKnop();
-
+	
 	public void handelInteractieAf() {
 		doeKnopActie();
 	}
@@ -37,7 +40,7 @@ public abstract class Knop {
 			doelwit.schakel();
 		}
 	}
-
+	
 	public void voegDoelwitToe(IDoelwit doelwit) {
 		doelwitten.add(doelwit);
 	}

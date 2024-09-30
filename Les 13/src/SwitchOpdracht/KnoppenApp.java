@@ -1,10 +1,12 @@
+package SwitchOpdracht;
+
 import java.util.ArrayList;
 import processing.core.PApplet;
 
 public class KnoppenApp extends PApplet {
 	
 	public static void main(String[] args) {
-		PApplet.main(new String[] { "KnoppenApp" });
+		PApplet.main(new String[] { "SwitchOpdracht.KnoppenApp" });
 	}
 	
 	private ArrayList<Knop> knoppen = new ArrayList<>();

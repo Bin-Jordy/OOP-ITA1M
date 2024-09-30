@@ -1,3 +1,5 @@
+package SwitchOpdracht;
+
 import processing.core.PApplet;
 
 public class Tekstraam implements IDoelwit{
