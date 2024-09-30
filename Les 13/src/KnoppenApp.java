@@ -19,24 +19,37 @@ public class KnoppenApp extends PApplet {
 	public void setup() {
 
 		licht = new Licht(this);
-		tekstraam = new Tekstraam(this,"OOPD",250,250);
+		tekstraam = new Tekstraam(this,"Uit",250,250);
 		
 		Switch eenSwitch=new Switch(this,100,20,50,50);
 		
 		eenSwitch.voegDoelwitToe(licht);
 		eenSwitch.voegDoelwitToe(tekstraam);
-
-		knoppen.add(eenSwitch);
 		
 		Switch nogEenSwitch=new Switch(this,200,20,50,50);
 
 		nogEenSwitch.voegDoelwitToe(licht);
 		nogEenSwitch.voegDoelwitToe(tekstraam);
 
-		nogEenSwitch.voegDoelwitToe(eenSwitch);
-		eenSwitch.voegDoelwitToe(nogEenSwitch);
+		Switch derdeSwitch=new Switch(this,300,20,50,50);
 
+		derdeSwitch.voegDoelwitToe(licht);
+		derdeSwitch.voegDoelwitToe(tekstraam);
+
+		//
+
+		eenSwitch.voegDoelwitToe(nogEenSwitch);
+		eenSwitch.voegDoelwitToe(derdeSwitch);
+
+		nogEenSwitch.voegDoelwitToe(eenSwitch);
+		nogEenSwitch.voegDoelwitToe(derdeSwitch);
+
+		derdeSwitch.voegDoelwitToe(eenSwitch);
+		derdeSwitch.voegDoelwitToe(nogEenSwitch);
+
+		knoppen.add(eenSwitch);
 		knoppen.add(nogEenSwitch);
+		knoppen.add(derdeSwitch);
 	}
 	
 	public void draw() {
